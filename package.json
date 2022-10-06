@@ -1,0 +1,54 @@
+{
+	"name": "deliveroo",
+	"version": "1.0.0",
+	"description": "deliveroo app nodejs express mongodb react react-native",
+	"author": "Iordanidis Chris",
+	"license": "ISC",
+	"main": "src/server.js",
+	"keywords": [
+		"nodejs",
+		"express",
+		"mongodb",
+		"react",
+		"react-native"
+	],
+	"scripts": {
+		"start": "set DEBUG=http,express:* & nodemon --inspect src/server.js",
+		"client": "npm start --prefix src/client",
+		"mobile": "npm start --prefix src/mobile",
+		"test": "mocha \"./test/**/*.js\" --exit --reporter spec",
+		"format": "prettier --write \"src/**/*.js\"",
+		"lint": "eslint \"{src,app,test,features}/**/*.js\" --fix",
+		"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client"
+	},
+	"dependencies": {
+		"chai": "^4.3.6",
+		"chai-http": "^4.3.0",
+		"cors": "^2.8.5",
+		"dotenv": "^16.0.3",
+		"express": "^4.18.1",
+		"mocha": "^10.0.0",
+		"mongodb": "^4.10.0",
+		"mongoose": "^6.6.2",
+		"morgan": "^1.10.0",
+		"nodemailer": "^6.8.0",
+		"nodemon": "^2.0.20",
+		"nyc": "^15.1.0",
+		"prettier": "^2.7.1",
+		"winston": "^3.8.2",
+		"winston-mongodb": "^5.1.0"
+	},
+	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "^5.38.1",
+		"eslint": "^8.24.0",
+		"eslint-config-standard": "^17.0.0",
+		"eslint-plugin-flowtype": "^8.0.3",
+		"eslint-plugin-import": "^2.26.0",
+		"eslint-plugin-n": "^15.3.0",
+		"eslint-plugin-node": "^11.1.0",
+		"eslint-plugin-prettier": "^4.2.1",
+		"eslint-plugin-promise": "^6.0.1",
+		"eslint-plugin-react": "^7.31.8",
+		"eslint-plugin-react-hooks": "^4.6.0"
+	}
+}
